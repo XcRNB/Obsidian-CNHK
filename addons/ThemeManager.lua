@@ -243,11 +243,11 @@ local ThemeManager = {} do
 
     --// GUI \\--
     function ThemeManager:CreateThemeManager(groupbox)
-        groupbox:AddLabel("背景颜色"):AddColorPicker("背景颜色", { Default = self.Library.Scheme.BackgroundColor })
-        groupbox:AddLabel("按钮背景颜色"):AddColorPicker("按键背景颜色", { Default = self.Library.Scheme.MainColor })
-        groupbox:AddLabel("部分东西颜色"):AddColorPicker("部分东西的颜色", { Default = self.Library.Scheme.AccentColor })
-        groupbox:AddLabel("边框颜色"):AddColorPicker("框颜色", { Default = self.Library.Scheme.OutlineColor })
-        groupbox:AddLabel("文字颜色"):AddColorPicker("文字颜色", { Default = self.Library.Scheme.FontColor })
+        groupbox:AddLabel("背景颜色"):AddColorPicker("BackgroundColor", { Default = self.Library.Scheme.BackgroundColor })
+        groupbox:AddLabel("主要颜色"):AddColorPicker("MainColor", { Default = self.Library.Scheme.MainColor })
+        groupbox:AddLabel("滑块颜色"):AddColorPicker("AccentColor", { Default = self.Library.Scheme.AccentColor })
+        groupbox:AddLabel("轮廓颜色"):AddColorPicker("OutlineColor", { Default = self.Library.Scheme.OutlineColor })
+        groupbox:AddLabel("字体颜色"):AddColorPicker("FontColor", { Default = self.Library.Scheme.FontColor })
         groupbox:AddDropdown("FontFace", {
             Text = "字体",
             Default = "Code",
@@ -366,4 +366,4 @@ local ThemeManager = {} do
 end
 
 getgenv().ObsidianThemeManager = ThemeManager
-return ThemeManager
+return ThemeManagerreturn ThemeManager
