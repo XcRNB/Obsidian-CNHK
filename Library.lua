@@ -1,4 +1,4 @@
-print("Obsidian Run!")
+print("mmmm")
 local cloneref = (cloneref or clonereference or function(instance: any)
     return instance
 end)
@@ -845,7 +845,11 @@ function Library:GetIcon(IconName: string)
     end
     local Success, Icon = pcall(Icons.GetAsset, IconName)
     if not Success then
-        return
+        if string.find(IconName, "rbxassetid") then
+            return IconName
+        else
+            return
+        end
     end
     return Icon
 end
@@ -4864,12 +4868,8 @@ function Library:CreateWindow(WindowInfo)
         local WarningTitle
         local WarningText
         local WarningStroke
-        if tonumber(Icon) ~= nil then
-            Icon = "rbxassetid://" .. Icon
-        end
-        if not string.find(Icon,"rbxassetid") then
+
         Icon = Library:GetIcon(Icon)
-        end
         do
             TabButton = New("TextButton", {
                 BackgroundColor3 = "MainColor",
